@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f4;
+            /* Light grey background */
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            /* Dark grey heading */
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            border: 2px solid #34495e;
+            /* Dark grey border */
+            border-radius: 5px;
+            font-size: 16px;
+            color: #2c3e50;
+            /* Dark grey text */
+            background-color: #ecf0f1;
+            /* Soft white background */
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #1abc9c;
+            /* Soft teal */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #16a085;
+            /* Darker teal on hover */
+        }
+
+        .weather-info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .error {
+            color: #e74c3c;
+            /* Red for error messages */
+        }
+
+        .icon {
+            width: 100px;
+            height: 100px;
+        }
+
+        .weather-detail {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            /* Dark grey for weather details */
+        }
+
+        .weather-detail img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Weather Forecast</h1>
+        <form action="/weather" method="GET">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <input type="submit" value="Get Weather">
+        </form>
+
+        <!-- Display error if any -->
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <!-- Display weather information if available -->
+        {% if weather %}
+        <div class="weather-info">
+            <h2>Weather in {{ weather.city }}</h2>
+            <img class="icon" src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather Icon">
+
+            <div class="weather-detail">
+                <img src="https://img.icons8.com/ios/50/000000/thermometer.png" alt="Temperature Icon">
+                Temperature: {{ weather.temperature }}°C
+            </div>
+
+            <div class="weather-detail">
+                <img src="https://img.icons8.com/ios/50/000000/partly-cloudy-day.png" alt="Description Icon">
+                Description: {{ weather.description }}
+            </div>
+
+            <div class="weather-detail">
+                <img src="https://img.icons8.com/ios/50/000000/humidity.png" alt="Humidity Icon">
+                Humidity: {{ weather.humidity }}%
+            </div>
+
+            <div class="weather-detail">
+                <img src="https://img.icons8.com/ios/50/000000/wind.png" alt="Wind Icon">
+                Wind Speed: {{ weather.wind_speed }} m/s
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
