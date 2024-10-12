@@ -1,4 +1,4 @@
-# Weather ForeCasting API
+# Weather ForeCast API
 
 ## Table of Contents
 - [Project Overview](#project-overview)
