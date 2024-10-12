@@ -32,43 +32,43 @@ The Weather Forecasting API is a Flask-based application that provides real-time
 - *Description:* Retrieves basic weather information for a specified city.
 
 #### Example Request
-http
+```http
 GET /weather?city=London
-
+```
 
 ##### Example Response
 Here is an example of the JSON response returned by the API:
-
+```bash
 json
 {
   "city": "London",
   "temperature": "15°C",
   "description": "Partly cloudy"
 }
-
+```
 ## Installation Process
 
 To set up the Weather Forecasting API on your local machine, follow these steps:
 
 1. *Clone the Repository*
-   bash
+   ```bash
    git clone https://github.com/TouseefH/weather-api.git
 2. **Navigate to the Project Directory**
-    bash
+   ``` bash
     cd weather-api
 3. *Create a Virtual Environment (Optional but recommended)*
-    bash
+    ```bash
     python -m venv venv
 4. **Activate the Virtual Environment**
-    bash
+    ```bash
     venv\Scripts\activate
 5. *Install Dependencies*
-    bash
+    ```bash
     pip install -r requirements.txt 
 
 ## Usage
 1. **Run the  app**
-    bash
+    ```bash
     python app.py
 2. *Access the API Open your web browser or a tool like Postman and navigate to*
     ```bash
