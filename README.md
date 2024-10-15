@@ -17,7 +17,7 @@ The Weather Forecasting API is a Flask-based application that provides real-time
 - *Touseef Hanif* (API and Endpoint Development)
   - Developed the core /weather endpoint, implementing logic to retrieve and return weather data based on the specified city.
 
-- *Syed Danayal Raza* (Frontend Integration)
+- *Syed Danyal Raza* (Frontend Integration)
   - Integrated the frontend application with the backend API, ensuring smooth data flow and user interaction. Implemented user-friendly interfaces for requesting weather information.
 
 - *Muhammad Abdullah Malik* (Testing and Documentation)
